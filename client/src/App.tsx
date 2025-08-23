@@ -20,6 +20,9 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import ServiceProviders from "@/pages/service-providers";
 import Status from "@/pages/status";
 import Support from "@/pages/support";
+import TermsOfService from "@/pages/terms-of-service";
+import ThemeDemo from "@/pages/theme-demo";
+import ThreeDStore from "@/pages/three-d-store";
 
 function App() {
   return (
@@ -52,6 +55,9 @@ function App() {
                   <Route path="/service-providers" element={<ServiceProviders />} />
                   <Route path="/status" element={<Status />} />
                   <Route path="/support" element={<Support />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/theme-demo" element={<ThemeDemo />} />
+                  <Route path="/three-d-store" element={<ThreeDStore />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
