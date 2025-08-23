@@ -4,10 +4,14 @@ import { EnhancedFooter } from "@/components/EnhancedFooter";
 import { SEOStructuredData } from "@/components/SEOStructuredData";
 import { ThreeBackground } from "@/components/ThreeBackground";
 import { HeroSection } from "@/components/HeroSection";
+import { AnimatedStats } from "@/components/AnimatedStats";
 import { AboutSection } from "@/components/AboutSection";
+import { HowItWorks } from "@/components/HowItWorks";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { MakrCaveSection } from "@/components/MakrCaveSection";
 import { StoreSection } from "@/components/StoreSection";
+import { VideoShowcase } from "@/components/VideoShowcase";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -71,10 +75,14 @@ export default function Home() {
       <EnhancedNavigation />
       <main id="main-content" className="relative z-10">
         <HeroSection />
+        <AnimatedStats />
         <AboutSection />
+        <HowItWorks />
         <ProjectsSection />
         <MakrCaveSection />
         <StoreSection />
+        <VideoShowcase />
+        <TestimonialsSection />
       </main>
       <EnhancedFooter />
     </>

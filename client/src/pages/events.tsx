@@ -189,7 +189,7 @@ export default function Events() {
         />
       </Helmet>
       
-      <SEOStructuredData type="event" />
+      <SEOStructuredData type="article" />
       
       <ThreeBackground />
       <EnhancedNavigation />
