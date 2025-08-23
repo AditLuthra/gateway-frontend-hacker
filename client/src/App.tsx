@@ -6,6 +6,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Home from "@/pages/home";
+import Ecosystem from "@/pages/ecosystem";
+import About from "@/pages/about";
+import Events from "@/pages/events";
+import Store from "@/pages/store";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -26,6 +30,10 @@ function App() {
                 
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/ecosystem" element={<Ecosystem />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/events" element={<Events />} />
+                  <Route path="/store" element={<Store />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
