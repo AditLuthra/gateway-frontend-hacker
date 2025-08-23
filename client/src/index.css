@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 88%);
+  --card: hsl(0, 0%, 10%);
+  --card-foreground: hsl(0, 0%, 88%);
+  --popover: hsl(0, 0%, 4%);
+  --popover-foreground: hsl(0, 0%, 88%);
+  --primary: hsl(188, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 0%);
+  --secondary: hsl(0, 0%, 10%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 10%);
+  --muted-foreground: hsl(0, 0%, 63%);
+  --accent: hsl(0, 0%, 10%);
+  --accent-foreground: hsl(0, 0%, 88%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(188, 100%, 41%, 0.3);
+  --input: hsl(0, 0%, 10%);
+  --ring: hsl(188, 100%, 41%);
+  --makr-yellow: hsl(56, 100%, 62%);
+  --makr-blue: hsl(188, 100%, 41%);
+  --terminal-green: hsl(120, 100%, 50%);
+  --dark-bg: hsl(0, 0%, 4%);
+  --dark-surface: hsl(0, 0%, 10%);
+  --dark-text: hsl(0, 0%, 88%);
+  --radius: 0.5rem;
+}
+
+.theme-light {
+  --background: hsl(0, 0%, 96%);
+  --foreground: hsl(0, 0%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 20%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 20%);
+  --primary: hsl(188, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 96%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 96%);
+  --ring: hsl(188, 100%, 41%);
+  --dark-bg: hsl(0, 0%, 96%);
+  --dark-surface: hsl(0, 0%, 100%);
+  --dark-text: hsl(0, 0%, 20%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: all 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .typewriter {
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .typewriter::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 1.2em;
+    background: var(--terminal-green);
+    right: -5px;
+    top: 0;
+    animation: blink 1s infinite;
+  }
+
+  .neon-border {
+    border: 1px solid var(--makr-blue);
+    box-shadow: 0 0 10px hsl(188, 100%, 41%, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .neon-border:hover {
+    box-shadow: 0 0 20px hsl(188, 100%, 41%, 0.6);
+  }
+
+  .console {
+    background: hsl(0, 0%, 0%, 0.9);
+    border: 1px solid var(--terminal-green);
+    color: var(--terminal-green);
+    font-family: 'Courier New', monospace;
+  }
+
+  .project-overlay {
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-glitch {
+    animation: glitch 0.3s ease-in-out;
+  }
+
+  .animate-typewriter {
+    animation: typewriter 3s steps(20) 1s both;
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  .glitch-hover:hover {
+    animation: glitch 0.3s ease-in-out;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px var(--makr-blue);
+  }
+  to {
+    box-shadow: 0 0 30px var(--makr-blue), 0 0 40px var(--makr-blue);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
