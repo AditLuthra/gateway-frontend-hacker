@@ -74,3 +74,17 @@ Preferred communication style: Simple, everyday language.
 - **Express.js**: Web application framework
 - **Session Management**: Connect-pg-simple for PostgreSQL session storage
 - **Zod**: Runtime type validation for API schemas
+
+# Recent Changes
+
+## August 23, 2025 - MakrX.org Landing Page Complete
+- Built complete futuristic hacker/maker-style landing page
+- Implemented cyberpunk design with Makr Yellow, Makr Blue, Terminal Green color scheme
+- Added 3D animated background with floating geometric shapes using Three.js
+- Created typewriter effect for "Dream. Make. Share." tagline
+- Built responsive sections: Hero, About, Projects showcase, Store preview
+- Added interactive navigation with smooth scrolling
+- Implemented dark/light theme toggle system
+- Added console easter eggs (IAmAMaker() and makrStatus() functions)
+- Included glitch hover effects and neon border animations
+- Successfully deployed and running on port 5000
