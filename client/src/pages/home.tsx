@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet-async";
-import { Navigation } from "@/components/Navigation";
+import { EnhancedNavigation } from "@/components/EnhancedNavigation";
+import { EnhancedFooter } from "@/components/EnhancedFooter";
+import { SEOStructuredData } from "@/components/SEOStructuredData";
 import { ThreeBackground } from "@/components/ThreeBackground";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { MakrCaveSection } from "@/components/MakrCaveSection";
 import { StoreSection } from "@/components/StoreSection";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -60,40 +61,14 @@ export default function Home() {
         <meta name="apple-mobile-web-app-title" content="MakrX" />
 
         {/* Structured Data for Rich Snippets */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "MakrX.org",
-            description: "Futuristic makerspace community for innovators and creators",
-            url: "https://makrx.org",
-            logo: "https://makrx.org/logo.png",
-            foundingDate: "2025",
-            sameAs: [
-              "https://twitter.com/MakrXOrg",
-              "https://github.com/makrx",
-              "https://discord.gg/makrx"
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+1-555-MAKR-X",
-              contactType: "customer service",
-              availableLanguage: "English"
-            },
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "123 Innovation District",
-              addressLocality: "Tech City",
-              addressRegion: "TC",
-              postalCode: "12345",
-              addressCountry: "US"
-            }
-          })}
-        </script>
       </Helmet>
 
+      {/* Enhanced SEO Structured Data */}
+      <SEOStructuredData type="organization" />
+      <SEOStructuredData type="website" />
+
       <ThreeBackground />
-      <Navigation />
+      <EnhancedNavigation />
       <main id="main-content" className="relative z-10">
         <HeroSection />
         <AboutSection />
@@ -101,7 +76,7 @@ export default function Home() {
         <MakrCaveSection />
         <StoreSection />
       </main>
-      <Footer />
+      <EnhancedFooter />
     </>
   );
 }
