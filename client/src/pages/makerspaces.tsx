@@ -4,7 +4,7 @@ import { EnhancedNavigation } from '@/components/EnhancedNavigation';
 
 export default function Makerspaces() {
   return (
-    <div className="min-h-screen bg-black text-white font-mono">
+    <div className="min-h-screen bg-dark-bg-primary text-dark-text-primary font-mono transition-colors">
       <EnhancedNavigation />
       
       {/* Background Effects */}
@@ -20,7 +20,7 @@ export default function Makerspaces() {
             <h1 className="text-4xl md:text-6xl font-bold text-makr-yellow mb-6 tracking-wider">
               MAKRCAVE.MAKERSPACES
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8">
               Access premium makerspaces with cutting-edge equipment, inventory management, 
               and project collaboration tools. Join a community of creators and innovators.
             </p>
