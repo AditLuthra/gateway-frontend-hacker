@@ -78,10 +78,8 @@ export default function Home() {
         <AnimatedStats />
         <AboutSection />
         <HowItWorks />
-        <ProjectsSection />
         <MakrCaveSection />
         <StoreSection />
-        <VideoShowcase />
         <TestimonialsSection />
       </main>
       <EnhancedFooter />
