@@ -15,6 +15,11 @@ import Careers from "@/pages/careers";
 import Contact from "@/pages/contact";
 import Docs from "@/pages/docs";
 import NotFound from "@/pages/not-found";
+import Press from "@/pages/press";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import ServiceProviders from "@/pages/service-providers";
+import Status from "@/pages/status";
+import Support from "@/pages/support";
 
 function App() {
   return (
@@ -42,6 +47,11 @@ function App() {
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/docs" element={<Docs />} />
+                  <Route path="/press" element={<Press />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/service-providers" element={<ServiceProviders />} />
+                  <Route path="/status" element={<Status />} />
+                  <Route path="/support" element={<Support />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
