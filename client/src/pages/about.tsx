@@ -318,8 +318,123 @@ export default function About() {
           </div>
         </section>
 
+        {/* Platform Overview */}
+        <section className="py-24 bg-dark-bg-secondary border-t border-makr-blue/30">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient-cyberpunk mb-6 font-mono">
+                Our Platform
+              </h2>
+              <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto font-mono">
+                Three integrated platforms serving every aspect of the maker journey
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div className="text-center group card-cyberpunk p-8">
+                <div className="w-20 h-20 bg-makr-blue/10 border border-makr-blue/30 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-makr-blue/20 group-hover:shadow-neon transition-all">
+                  <Building2 className="w-10 h-10 text-makr-blue" />
+                </div>
+                <h3 className="text-2xl font-bold text-gradient-cyberpunk mb-4 font-mono">MakrCave</h3>
+                <p className="text-dark-text-secondary mb-6 leading-relaxed font-mono">
+                  Network of premium makerspaces with professional equipment, expert mentors, 
+                  and collaborative communities in major cities across India.
+                </p>
+                <Link 
+                  to="/ecosystem" 
+                  className="inline-flex items-center text-makr-blue font-medium hover:text-makr-yellow transition-colors font-mono"
+                >
+                  Explore Makerspaces <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="text-center group card-cyberpunk p-8">
+                <div className="w-20 h-20 bg-terminal-green/10 border border-terminal-green/30 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-terminal-green/20 group-hover:shadow-neon transition-all">
+                  <ShoppingCart className="w-10 h-10 text-terminal-green" />
+                </div>
+                <h3 className="text-2xl font-bold text-gradient-cyberpunk mb-4 font-mono">MakrX Store</h3>
+                <p className="text-dark-text-secondary mb-6 leading-relaxed font-mono">
+                  Curated marketplace for tools, materials, and components. Custom manufacturing 
+                  services including 3D printing, laser cutting, and PCB fabrication.
+                </p>
+                <Link 
+                  to="/store" 
+                  className="inline-flex items-center text-terminal-green font-medium hover:text-makr-yellow transition-colors font-mono"
+                >
+                  Shop Tools & Materials <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="text-center group card-cyberpunk p-8">
+                <div className="w-20 h-20 bg-makr-yellow/10 border border-makr-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-makr-yellow/20 group-hover:shadow-neon transition-all">
+                  <GraduationCap className="w-10 h-10 text-makr-yellow" />
+                </div>
+                <h3 className="text-2xl font-bold text-gradient-cyberpunk mb-4 font-mono">Learning Hub</h3>
+                <p className="text-dark-text-secondary mb-6 leading-relaxed font-mono">
+                  Comprehensive learning platform with hands-on workshops, online courses, 
+                  skill assessments, and certification programs for all skill levels.
+                </p>
+                <Link 
+                  to="/events" 
+                  className="inline-flex items-center text-makr-yellow font-medium hover:text-terminal-green transition-colors font-mono"
+                >
+                  Start Learning <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Impact & Recognition */}
+        <section className="py-24 bg-gradient-to-r from-makr-blue/20 via-purple-600/20 to-makr-yellow/10 border-t border-makr-blue/30">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-gradient-cyberpunk mb-6 font-mono">
+                Impact & Recognition
+              </h2>
+              <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto font-mono">
+                Proud to be recognized as a leader in the maker movement
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              <div className="text-center">
+                <TrendingUp className="w-12 h-12 text-makr-yellow mx-auto mb-4" />
+                <div className="text-3xl font-bold text-makr-yellow mb-2 font-mono">500+</div>
+                <div className="text-dark-text-muted font-mono">Startups Supported</div>
+              </div>
+              <div className="text-center">
+                <Award className="w-12 h-12 text-makr-blue mx-auto mb-4" />
+                <div className="text-3xl font-bold text-makr-blue mb-2 font-mono">50+</div>
+                <div className="text-dark-text-muted font-mono">Awards Won</div>
+              </div>
+              <div className="text-center">
+                <Users className="w-12 h-12 text-terminal-green mx-auto mb-4" />
+                <div className="text-3xl font-bold text-terminal-green mb-2 font-mono">1M+</div>
+                <div className="text-dark-text-muted font-mono">Projects Created</div>
+              </div>
+              <div className="text-center">
+                <Globe className="w-12 h-12 text-makr-yellow mx-auto mb-4" />
+                <div className="text-3xl font-bold text-makr-yellow mb-2 font-mono">25+</div>
+                <div className="text-dark-text-muted font-mono">Cities Served</div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-8 text-gradient-cyberpunk font-mono">Featured In</h3>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="text-lg font-semibold text-dark-text-muted font-mono">TechCrunch</div>
+                <div className="text-lg font-semibold text-dark-text-muted font-mono">Economic Times</div>
+                <div className="text-lg font-semibold text-dark-text-muted font-mono">YourStory</div>
+                <div className="text-lg font-semibold text-dark-text-muted font-mono">Inc42</div>
+                <div className="text-lg font-semibold text-dark-text-muted font-mono">The Hindu</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
-        <section className="py-24 bg-gradient-to-r from-makr-blue/20 to-purple-700/20 border-t border-makr-blue/30">
+        <section className="py-24 bg-gradient-to-r from-makr-blue/30 to-purple-700/30 border-t border-makr-blue/30">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-gradient-cyberpunk mb-6 font-mono">
               Join the Maker Revolution
@@ -329,13 +444,15 @@ export default function About() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link 
-                to="/register" 
+              <a 
+                href="https://auth.makrx.org/register" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-cyberpunk px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 font-mono"
               >
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+              </a>
               
               <Link 
                 to="/contact" 

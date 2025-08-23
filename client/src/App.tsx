@@ -10,6 +10,9 @@ import Ecosystem from "@/pages/ecosystem";
 import About from "@/pages/about";
 import Events from "@/pages/events";
 import Store from "@/pages/store";
+import Blog from "@/pages/blog";
+import Careers from "@/pages/careers";
+import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/events" element={<Events />} />
                   <Route path="/store" element={<Store />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/careers" element={<Careers />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
