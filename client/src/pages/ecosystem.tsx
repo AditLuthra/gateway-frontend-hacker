@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { 
   Building2, ShoppingCart, GraduationCap, Settings, 
   ArrowRight, ExternalLink, Users, Wrench, Zap, 
-  Globe, Shield, Star, CheckCircle, Play
+  Globe, Shield, Star, CheckCircle, Play, Calendar
 } from "lucide-react";
 import { EnhancedNavigation } from "@/components/EnhancedNavigation";
 import { EnhancedFooter } from "@/components/EnhancedFooter";
@@ -217,6 +217,52 @@ export default function Ecosystem() {
               <div>
                 <div className="text-4xl font-bold mb-2 text-makr-blue font-mono">95%</div>
                 <div className="text-dark-text-muted font-mono">Order Success Rate</div>
+              </div>
+            </div>
+          </div>
+
+          {/* MakrCave Features */}
+          <div className="mb-16 animate-slide-in-left">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient-cyberpunk mb-6 font-mono">
+                Complete Makerspace Management
+              </h2>
+              <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto font-mono">
+                MakrCave provides everything you need to run a modern, efficient makerspace
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-makr-blue/10 border border-makr-blue/30 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neon">
+                  <ShoppingCart className="w-8 h-8 text-makr-blue" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">Inventory Management</h3>
+                <p className="text-dark-text-secondary font-mono">Track tools, materials, and equipment with real-time availability and automated reordering.</p>
+              </div>
+
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-terminal-green/10 border border-terminal-green/30 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neon-green">
+                  <Calendar className="w-8 h-8 text-terminal-green" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">Reservations</h3>
+                <p className="text-dark-text-secondary font-mono">Book equipment, workstations, and meeting rooms with smart scheduling and conflict resolution.</p>
+              </div>
+
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-purple-500/10 border border-purple-500/30 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neon">
+                  <Users className="w-8 h-8 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">Project Tracking</h3>
+                <p className="text-dark-text-secondary font-mono">Collaborate on projects, track progress, and share resources with team members.</p>
+              </div>
+
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-makr-yellow/10 border border-makr-yellow/30 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neon-yellow">
+                  <Building2 className="w-8 h-8 text-makr-yellow" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">BOM Ordering</h3>
+                <p className="text-dark-text-secondary font-mono">Generate bills of materials and order components directly from integrated suppliers.</p>
               </div>
             </div>
           </div>

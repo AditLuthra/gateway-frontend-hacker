@@ -13,6 +13,7 @@ import Store from "@/pages/store";
 import Blog from "@/pages/blog";
 import Careers from "@/pages/careers";
 import Contact from "@/pages/contact";
+import Docs from "@/pages/docs";
 import NotFound from "@/pages/not-found";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/docs" element={<Docs />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 
