@@ -1,11 +1,11 @@
 import React from 'react';
 import { ExternalLink, Building2, Package, Calendar, BarChart3, Wrench, Users, Cpu, Shield } from 'lucide-react';
-import { Navigation } from '@/components/Navigation';
+import { EnhancedNavigation } from '@/components/EnhancedNavigation';
 
 export default function Makerspaces() {
   return (
     <div className="min-h-screen bg-black text-white font-mono">
-      <Navigation />
+      <EnhancedNavigation />
       
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-10">

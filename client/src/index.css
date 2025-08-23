@@ -105,13 +105,13 @@
   --terminal-green-dark: #1B5E20;
   --terminal-green-light: #4CAF50;
   
-  /* Light Backgrounds */
-  --dark-bg-primary: #f8fafc;
-  --dark-bg-secondary: #f1f5f9;
-  --dark-bg-tertiary: #e2e8f0;
-  --dark-surface: #ffffff;
-  --dark-border: #e2e8f0;
-  --dark-border-light: #cbd5e1;
+  /* Light Backgrounds - Darker and cream-toned */
+  --dark-bg-primary: #f5f3f0;
+  --dark-bg-secondary: #ede8e3;
+  --dark-bg-tertiary: #e0d9d2;
+  --dark-surface: #faf8f6;
+  --dark-border: #d4ccc3;
+  --dark-border-light: #c7bdb2;
   
   /* Light Text Colors */
   --dark-text-primary: #1e293b;
@@ -119,25 +119,25 @@
   --dark-text-muted: #64748b;
   --dark-text-accent: #0097A7;
   
-  /* Shadcn Light Variables */
-  --background: hsl(0, 0%, 98%);
+  /* Shadcn Light Variables - Darker cream theme */
+  --background: hsl(30, 15%, 96%);
   --foreground: hsl(0, 0%, 15%);
-  --card: hsl(0, 0%, 100%);
+  --card: hsl(30, 20%, 98%);
   --card-foreground: hsl(0, 0%, 15%);
-  --popover: hsl(0, 0%, 100%);
+  --popover: hsl(30, 20%, 98%);
   --popover-foreground: hsl(0, 0%, 15%);
   --primary: hsl(188, 100%, 32%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 96%);
+  --secondary: hsl(30, 10%, 93%);
   --secondary-foreground: hsl(0, 0%, 9%);
-  --muted: hsl(0, 0%, 96%);
+  --muted: hsl(30, 10%, 93%);
   --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(0, 0%, 96%);
+  --accent: hsl(30, 10%, 93%);
   --accent-foreground: hsl(0, 0%, 9%);
   --destructive: hsl(0, 85%, 50%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(0, 0%, 90%);
-  --input: hsl(0, 0%, 98%);
+  --border: hsl(30, 8%, 85%);
+  --input: hsl(30, 15%, 96%);
   --ring: hsl(188, 100%, 32%);
 }
 

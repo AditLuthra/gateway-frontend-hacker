@@ -16,9 +16,9 @@ export function EnhancedNavigation() {
     { name: "Ecosystem", href: "/ecosystem" },
     { name: "Makerspaces", href: "/makerspaces" },
     { name: "Store", href: "/store" },
-    { name: "Events", href: "/events" },
-    { name: "Blog", href: "/blog" },
-    { name: "Docs", href: "/docs" },
+    { name: "Service Providers", href: "/service-providers" },
+    { name: "Support", href: "/support" },
+    { name: "About", href: "/about" },
   ];
 
   const launcherApps = [

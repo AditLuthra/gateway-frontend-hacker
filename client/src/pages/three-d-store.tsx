@@ -1,11 +1,11 @@
 import React from 'react';
 import { ExternalLink, Upload, FileText, Calculator, Printer, Zap, Clock, Shield } from 'lucide-react';
-import { Navigation } from '@/components/Navigation';
+import { EnhancedNavigation } from '@/components/EnhancedNavigation';
 
 export default function ThreeDStore() {
   return (
     <div className="min-h-screen bg-black text-white font-mono">
-      <Navigation />
+      <EnhancedNavigation />
       
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-10">
