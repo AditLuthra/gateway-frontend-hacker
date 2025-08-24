@@ -31,9 +31,19 @@ Preferred communication style: Simple, everyday language.
 
 ## Data Layer
 - **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
-- **Schema**: User management schema with username/password authentication ready
+- **Schema**: User management schema integrated with Keycloak SSO
 - **Migrations**: Drizzle-kit for database schema management
 - **Connection**: Neon Database serverless PostgreSQL integration
+
+## Authentication Architecture
+- **Keycloak SSO**: Complete authentication system using Keycloak for single sign-on
+- **Unified Authentication**: Single login across all MakrX ecosystem platforms
+- **User Management**: Centralized user profiles and permissions through Keycloak
+- **Integration**: Seamless authentication flow between MakrX.org, MakrCave, MakrX Store, MakrX.events, and Service Provider Panel
+- **Authentication URLs**: 
+  - Login: https://auth.makrx.org/login
+  - Registration: https://auth.makrx.org/register
+  - Dashboard: Integrated user profile management and preferences
 
 ## Development Environment
 - **Replit Integration**: Configured for Replit development environment with runtime error handling
@@ -76,6 +86,16 @@ Preferred communication style: Simple, everyday language.
 - **Zod**: Runtime type validation for API schemas
 
 # Recent Changes
+
+## August 24, 2025 - Authentication Integration & User Dashboard
+- Updated documentation to include Keycloak SSO authentication architecture
+- Added comprehensive user dashboard page (/dashboard) with profile management
+- Integrated Keycloak authentication URLs (auth.makrx.org/login, auth.makrx.org/register)
+- Created user profile editing functionality with role selection
+- Added activity tracking and ecosystem platform access links
+- Updated navigation to include Dashboard link
+- Documented unified authentication across all MakrX ecosystem platforms
+- Added MakrX.events integration in navigation launcher and home page section
 
 ## August 23, 2025 - MakrX.org Landing Page Complete
 - Built complete futuristic hacker/maker-style landing page

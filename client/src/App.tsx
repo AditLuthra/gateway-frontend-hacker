@@ -24,6 +24,7 @@ import TermsOfService from "@/pages/terms-of-service";
 import ThemeDemo from "@/pages/theme-demo";
 import ThreeDStore from "@/pages/three-d-store";
 import Makerspaces from "@/pages/makerspaces";
+import Dashboard from "@/pages/dashboard";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
                   <Route path="/theme-demo" element={<ThemeDemo />} />
                   <Route path="/three-d-store" element={<ThreeDStore />} />
                   <Route path="/makerspaces" element={<Makerspaces />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 

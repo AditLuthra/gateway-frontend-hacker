@@ -17,6 +17,7 @@ export function EnhancedNavigation() {
     { name: "Makerspaces", href: "/makerspaces" },
     { name: "Store", href: "/store" },
     { name: "Service Providers", href: "/service-providers" },
+    { name: "Dashboard", href: "/dashboard" },
     { name: "Support", href: "/support" },
     { name: "About", href: "/about" },
   ];
