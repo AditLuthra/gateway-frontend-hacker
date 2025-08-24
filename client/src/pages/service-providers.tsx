@@ -1,26 +1,42 @@
-import React from 'react';
+import { Helmet } from "react-helmet-async";
 import { ExternalLink, Zap, DollarSign, Clock, Users } from 'lucide-react';
-import { Navigation } from '@/components/Navigation';
+import { EnhancedNavigation } from "@/components/EnhancedNavigation";
+import { EnhancedFooter } from "@/components/EnhancedFooter";
+import { SEOStructuredData } from "@/components/SEOStructuredData";
+import { ThreeBackground } from "@/components/ThreeBackground";
 
 export default function ServiceProviders() {
   return (
-    <div className="min-h-screen bg-black text-white font-mono">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Service Providers - Join MakrX Manufacturing Network | MakrX.org</title>
+        <meta 
+          name="description" 
+          content="Join MakrX service provider network and earn by fulfilling custom manufacturing jobs. First-to-accept system ensures fair job distribution and competitive earnings."
+        />
+      </Helmet>
       
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-makr-yellow/20"></div>
-      </div>
-
-      <div className="relative pt-24">
+      <SEOStructuredData type="organization" />
+      
+      <ThreeBackground />
+      <EnhancedNavigation />
+      
+      <main className="min-h-screen relative z-10">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-green-600/20 to-green-500/10 py-20 border-b border-green-500/30">
+        <section className="bg-gradient-to-br from-terminal-green/20 to-makr-blue/20 py-20 border-b border-makr-blue/30">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <Zap className="w-16 h-16 text-makr-yellow mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-bold text-makr-yellow mb-6 tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-makr-yellow/10 backdrop-blur-sm border border-makr-yellow/30 rounded-full px-6 py-2 mb-6">
+              <Zap className="h-5 w-5 text-makr-yellow animate-pulse" />
+              <span className="text-makr-yellow font-mono font-semibold tracking-wider">
+                SERVICE PROVIDER NETWORK
+              </span>
+            </div>
+            
+            <Zap className="w-16 h-16 text-makr-yellow mx-auto mb-6 animate-bounce" />
+            <h1 className="text-4xl md:text-6xl font-bold text-gradient-cyberpunk mb-6 font-mono">
               SERVICE_PROVIDERS.join()
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-dark-text-secondary max-w-3xl mx-auto mb-8 font-mono">
               Join our network of skilled service providers and earn by fulfilling custom manufacturing jobs. 
               First-to-accept system ensures fair job distribution and competitive earnings.
             </p>
@@ -28,7 +44,7 @@ export default function ServiceProviders() {
               href="https://auth.makrx.org/register?provider=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-makr-yellow/20 border border-makr-yellow/50 text-makr-yellow font-semibold rounded-xl hover:bg-makr-yellow/30 transition-all duration-300 hover:scale-105"
+              className="btn-cyberpunk inline-flex items-center gap-3 px-8 py-4 font-semibold rounded-xl transition-all duration-300 hover:scale-105 font-mono"
             >
               Become a Provider
               <ExternalLink className="w-5 h-5" />
@@ -37,38 +53,44 @@ export default function ServiceProviders() {
         </section>
 
         {/* How It Works */}
-        <section className="py-20">
+        <section className="py-20 bg-dark-bg-secondary">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               JOB_ASSIGNMENT.algorithm()
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-makr-blue/20 border border-makr-blue/50 text-makr-blue rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                <h3 className="text-xl font-semibold mb-3 text-makr-yellow">Job Posted</h3>
-                <p className="text-gray-400">Customers upload their designs and requirements through our platform.</p>
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-makr-blue/10 border border-makr-blue/30 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-neon">
+                  <span className="text-2xl font-bold text-makr-blue font-mono">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">Job Posted</h3>
+                <p className="text-dark-text-secondary font-mono">Customers upload their designs and requirements through our platform.</p>
               </div>
 
-              <div className="text-center">
-                <div className="w-12 h-12 bg-green-500/20 border border-green-500/50 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                <h3 className="text-xl font-semibold mb-3 text-makr-yellow">First-to-Accept</h3>
-                <p className="text-gray-400">Qualified providers receive notifications. First to accept gets the job.</p>
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-terminal-green/10 border border-terminal-green/30 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-neon-green">
+                  <span className="text-2xl font-bold text-terminal-green font-mono">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">First-to-Accept</h3>
+                <p className="text-dark-text-secondary font-mono">Qualified providers receive notifications. First to accept gets the job.</p>
               </div>
 
-              <div className="text-center">
-                <div className="w-12 h-12 bg-makr-yellow/20 border border-makr-yellow/50 text-makr-yellow rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                <h3 className="text-xl font-semibold mb-3 text-makr-yellow">Delivery & Payment</h3>
-                <p className="text-gray-400">Complete the job, get paid automatically upon customer approval.</p>
+              <div className="text-center card-cyberpunk p-6">
+                <div className="w-16 h-16 bg-makr-yellow/10 border border-makr-yellow/30 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-neon">
+                  <span className="text-2xl font-bold text-makr-yellow font-mono">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gradient-cyberpunk font-mono">Delivery & Payment</h3>
+                <p className="text-dark-text-secondary font-mono">Complete the job, get paid automatically upon customer approval.</p>
               </div>
             </div>
 
-            <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-8">
-              <h3 className="text-xl font-semibold text-makr-blue mb-4">Why First-to-Accept Works</h3>
-              <div className="grid md:grid-cols-2 gap-6 text-gray-300">
+            <div className="card-cyberpunk p-8 border border-makr-blue/30">
+              <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-4 font-mono">Why First-to-Accept Works</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-dark-text-secondary">
                 <div>
-                  <h4 className="font-semibold text-makr-yellow mb-2">For Providers:</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold text-makr-yellow mb-2 font-mono">For Providers:</h4>
+                  <ul className="space-y-1 text-sm font-mono">
                     <li>• No bidding wars or underpricing</li>
                     <li>• Fair compensation based on job complexity</li>
                     <li>• Quick decision making = faster earnings</li>
@@ -76,8 +98,8 @@ export default function ServiceProviders() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-makr-yellow mb-2">For Customers:</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold text-makr-yellow mb-2 font-mono">For Customers:</h4>
+                  <ul className="space-y-1 text-sm font-mono">
                     <li>• Guaranteed fixed pricing</li>
                     <li>• Faster job acceptance</li>
                     <li>• Pre-vetted quality providers</li>
@@ -90,44 +112,44 @@ export default function ServiceProviders() {
         </section>
 
         {/* Earnings Model */}
-        <section className="py-20 bg-gray-900/50">
+        <section className="py-20 bg-dark-bg-primary">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               EARNINGS_MODEL.calculate()
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-black border border-makr-blue/30 rounded-xl p-6">
-                <DollarSign className="w-8 h-8 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-makr-blue mb-4">Revenue Sharing</h3>
+              <div className="card-cyberpunk p-6 border border-makr-blue/30">
+                <DollarSign className="w-8 h-8 text-terminal-green mb-4" />
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-4 font-mono">Revenue Sharing</h3>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Provider Earnings</span>
-                    <span className="text-green-400 font-bold">85%</span>
+                    <span className="text-dark-text-secondary font-mono">Provider Earnings</span>
+                    <span className="text-terminal-green font-bold font-mono">85%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400">Platform Fee</span>
-                    <span className="text-makr-blue font-bold">15%</span>
+                    <span className="text-dark-text-secondary font-mono">Platform Fee</span>
+                    <span className="text-makr-blue font-bold font-mono">15%</span>
                   </div>
-                  <div className="pt-2 border-t border-gray-700">
-                    <span className="text-xs text-gray-500">No hidden fees, transparent pricing</span>
+                  <div className="pt-2 border-t border-makr-blue/30">
+                    <span className="text-xs text-dark-text-muted font-mono">No hidden fees, transparent pricing</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-black border border-makr-blue/30 rounded-xl p-6">
+              <div className="card-cyberpunk p-6 border border-makr-blue/30">
                 <Clock className="w-8 h-8 text-makr-yellow mb-4" />
-                <h3 className="text-xl font-semibold text-makr-blue mb-4">Payment Terms</h3>
-                <div className="space-y-3 text-gray-300">
-                  <div className="flex justify-between">
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-4 font-mono">Payment Terms</h3>
+                <div className="space-y-3 text-dark-text-secondary">
+                  <div className="flex justify-between font-mono">
                     <span>Job Acceptance</span>
-                    <span className="text-green-400">25% Advance</span>
+                    <span className="text-terminal-green">25% Advance</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between font-mono">
                     <span>Customer Approval</span>
-                    <span className="text-green-400">75% Final</span>
+                    <span className="text-terminal-green">75% Final</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between font-mono">
                     <span>Payment Processing</span>
                     <span className="text-makr-yellow">24-48 hours</span>
                   </div>
@@ -136,20 +158,20 @@ export default function ServiceProviders() {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-r from-green-500/20 to-makr-yellow/20 border border-green-500/30 rounded-xl p-6 inline-block">
-                <h3 className="text-2xl font-bold text-makr-yellow mb-2">Average Monthly Earnings</h3>
-                <div className="grid grid-cols-3 gap-6 text-center">
+              <div className="card-cyberpunk p-8 border border-terminal-green/30 inline-block shadow-neon-green">
+                <h3 className="text-2xl font-bold text-gradient-cyberpunk mb-6 font-mono">Average Monthly Earnings</h3>
+                <div className="grid grid-cols-3 gap-8 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-green-400">₹25K</div>
-                    <div className="text-sm text-gray-400">Part-time</div>
+                    <div className="text-3xl font-bold text-terminal-green font-mono">₹25K</div>
+                    <div className="text-sm text-dark-text-muted font-mono">Part-time</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-green-400">₹65K</div>
-                    <div className="text-sm text-gray-400">Full-time</div>
+                    <div className="text-3xl font-bold text-terminal-green font-mono">₹65K</div>
+                    <div className="text-sm text-dark-text-muted font-mono">Full-time</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-green-400">₹150K+</div>
-                    <div className="text-sm text-gray-400">Enterprise</div>
+                    <div className="text-3xl font-bold text-terminal-green font-mono">₹150K+</div>
+                    <div className="text-sm text-dark-text-muted font-mono">Enterprise</div>
                   </div>
                 </div>
               </div>
@@ -158,9 +180,9 @@ export default function ServiceProviders() {
         </section>
 
         {/* Service Categories */}
-        <section className="py-20">
+        <section className="py-20 bg-dark-bg-secondary">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               SERVICE_CATEGORIES.getAll()
             </h2>
 
@@ -175,21 +197,21 @@ export default function ServiceProviders() {
                 { name: "Electronics", demand: "High", avgPrice: "₹30/hr" },
                 { name: "Prototyping", demand: "High", avgPrice: "₹50/hr" }
               ].map((service, index) => (
-                <div key={index} className="bg-gray-900 border border-makr-blue/30 rounded-xl p-4 hover:border-makr-yellow/50 transition-colors">
-                  <h3 className="font-semibold text-makr-yellow mb-2">{service.name}</h3>
+                <div key={index} className="card-cyberpunk p-4 border border-makr-blue/30 hover:border-makr-yellow/50 hover:shadow-neon transition-all">
+                  <h3 className="font-semibold text-gradient-cyberpunk mb-2 font-mono">{service.name}</h3>
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-400">Demand:</span>
-                      <span className={`font-semibold ${
-                        service.demand === 'High' ? 'text-green-400' : 
-                        service.demand === 'Medium' ? 'text-makr-yellow' : 'text-gray-500'
+                      <span className="text-dark-text-secondary font-mono">Demand:</span>
+                      <span className={`font-semibold font-mono ${
+                        service.demand === 'High' ? 'text-terminal-green' : 
+                        service.demand === 'Medium' ? 'text-makr-yellow' : 'text-dark-text-muted'
                       }`}>
                         {service.demand}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-400">Avg Rate:</span>
-                      <span className="text-makr-blue font-semibold">{service.avgPrice}</span>
+                      <span className="text-dark-text-secondary font-mono">Avg Rate:</span>
+                      <span className="text-makr-blue font-semibold font-mono">{service.avgPrice}</span>
                     </div>
                   </div>
                 </div>
@@ -199,15 +221,15 @@ export default function ServiceProviders() {
         </section>
 
         {/* Requirements */}
-        <section className="py-20 bg-gray-900/50">
+        <section className="py-20 bg-dark-bg-primary">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               PROVIDER_REQUIREMENTS.validate()
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <h3 className="text-xl font-semibold text-makr-blue">Technical Requirements</h3>
+              <div className="card-cyberpunk p-6 space-y-6">
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk font-mono">Technical Requirements</h3>
                 <div className="space-y-4">
                   {[
                     "Professional-grade equipment access",
@@ -216,15 +238,15 @@ export default function ServiceProviders() {
                     "Quality management certification (preferred)"
                   ].map((req, index) => (
                     <div key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-300">{req}</span>
+                      <div className="w-2 h-2 bg-terminal-green rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-dark-text-secondary font-mono">{req}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-xl font-semibold text-makr-blue">Business Requirements</h3>
+              <div className="card-cyberpunk p-6 space-y-6">
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk font-mono">Business Requirements</h3>
                 <div className="space-y-4">
                   {[
                     "Valid business registration (GST preferred)",
@@ -234,7 +256,7 @@ export default function ServiceProviders() {
                   ].map((req, index) => (
                     <div key={index} className="flex items-start">
                       <div className="w-2 h-2 bg-makr-yellow rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-gray-300">{req}</span>
+                      <span className="text-dark-text-secondary font-mono">{req}</span>
                     </div>
                   ))}
                 </div>
@@ -244,9 +266,9 @@ export default function ServiceProviders() {
         </section>
 
         {/* Success Stories */}
-        <section className="py-20">
+        <section className="py-20 bg-dark-bg-secondary">
           <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               SUCCESS_STORIES.inspire()
             </h2>
 
@@ -274,19 +296,19 @@ export default function ServiceProviders() {
                   story: "Expanded from local to national clients. The platform's verification system builds trust with customers I've never met."
                 }
               ].map((story, index) => (
-                <div key={index} className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6">
+                <div key={index} className="card-cyberpunk p-6 border border-makr-blue/30 hover:shadow-neon transition-all">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-makr-blue/30 to-makr-yellow/30 rounded-full mr-4 border border-makr-blue/50"></div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-makr-blue/30 to-makr-yellow/30 rounded-full mr-4 border border-makr-blue/50 shadow-neon"></div>
                     <div>
-                      <h3 className="font-semibold text-makr-yellow">{story.name}</h3>
-                      <p className="text-sm text-gray-400">{story.location} • {story.service}</p>
+                      <h3 className="font-semibold text-gradient-cyberpunk font-mono">{story.name}</h3>
+                      <p className="text-sm text-dark-text-muted font-mono">{story.location} • {story.service}</p>
                     </div>
                   </div>
                   <div className="mb-4">
-                    <span className="text-green-400 font-bold text-lg">{story.earnings}</span>
-                    <span className="text-gray-500 text-sm ml-2">average</span>
+                    <span className="text-terminal-green font-bold text-lg font-mono">{story.earnings}</span>
+                    <span className="text-dark-text-muted text-sm ml-2 font-mono">average</span>
                   </div>
-                  <p className="text-gray-300 text-sm italic">"{story.story}"</p>
+                  <p className="text-dark-text-secondary text-sm italic font-mono">"{story.story}"</p>
                 </div>
               ))}
             </div>
@@ -294,29 +316,31 @@ export default function ServiceProviders() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-makr-blue/20 to-makr-yellow/20 border-t border-makr-blue/30">
+        <section className="py-20 bg-gradient-to-r from-terminal-green/20 to-makr-blue/20 border-t border-makr-blue/30">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gradient-cyberpunk font-mono">
               JOIN_NETWORK.execute()
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-dark-text-secondary mb-8 font-mono">
               Ready to start earning with India's fastest-growing manufacturing network?
             </p>
             <a
               href="https://auth.makrx.org/register?provider=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-makr-yellow/20 border border-makr-yellow/50 text-makr-yellow font-semibold rounded-xl hover:bg-makr-yellow/30 transition-all duration-300 hover:scale-105"
+              className="btn-cyberpunk inline-flex items-center gap-3 px-8 py-4 font-semibold rounded-xl transition-all duration-300 hover:scale-105 font-mono"
             >
               Become a Provider
               <ExternalLink className="w-5 h-5" />
             </a>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-dark-text-muted mt-4 font-mono">
               Application review typically takes 2-3 business days
             </p>
           </div>
         </section>
-      </div>
-    </div>
+      </main>
+      
+      <EnhancedFooter />
+    </>
   );
 }
