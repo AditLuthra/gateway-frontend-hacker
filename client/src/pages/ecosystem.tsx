@@ -86,17 +86,18 @@ export default function Ecosystem() {
       icon: <ShoppingCart className="w-8 h-8 text-makr-yellow" />
     },
     {
-      name: "Learn Platform",
-      description: "Comprehensive learning hub with courses, certifications, and skill tracking.",
+      name: "MakrX.events",
+      description: "Ultimate event management tool for hosting meetups, hackathons, competitions and workshops for makers.",
       features: [
-        "50+ expert-led courses",
-        "Hands-on project tutorials",
-        "Skill badges & certificates",
-        "Community discussions"
+        "Event scheduling & management",
+        "Registration & check-ins",
+        "Competition tracking & scoring",
+        "Automated attendee notifications"
       ],
-      cta: "Start Learning",
-      href: "/learn",
-      icon: <GraduationCap className="w-8 h-8 text-makr-blue" />
+      cta: "Manage Events",
+      href: "https://events.makrx.org",
+      icon: <Calendar className="w-8 h-8 text-orange-500" />,
+      isExternal: true
     },
     {
       name: "Service Provider Panel",
@@ -121,7 +122,7 @@ export default function Ecosystem() {
         <title>MakrX Ecosystem - Complete Maker Platform | MakrX.org</title>
         <meta 
           name="description" 
-          content="Explore the complete MakrX ecosystem: MakrCave makerspaces, MakrX Store marketplace, Learning Platform, and Service Provider network. Everything makers need in one integrated platform."
+          content="Explore the complete MakrX ecosystem: MakrCave makerspaces, MakrX Store marketplace, MakrX.events platform, and Service Provider network. Everything makers need in one integrated platform."
         />
       </Helmet>
       
@@ -186,7 +187,7 @@ export default function Ecosystem() {
                 <div className="w-12 h-12 bg-makr-blue/20 rounded-full flex items-center justify-center border border-makr-blue/30 shadow-neon">
                   <span className="text-makr-blue font-bold font-mono">4</span>
                 </div>
-                <span className="font-medium font-mono text-dark-text-primary">Learn & Iterate</span>
+                <span className="font-medium font-mono text-dark-text-primary">Host Events</span>
               </div>
             </div>
           </div>
