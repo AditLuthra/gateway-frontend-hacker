@@ -9,6 +9,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { MakrCaveSection } from "@/components/MakrCaveSection";
+import { MakrXEventsSection } from "@/components/MakrXEventsSection";
 import { StoreSection } from "@/components/StoreSection";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -79,6 +80,7 @@ export default function Home() {
         <AboutSection />
         <HowItWorks />
         <MakrCaveSection />
+        <MakrXEventsSection />
         <StoreSection />
         <TestimonialsSection />
       </main>

@@ -30,6 +30,13 @@ export function EnhancedNavigation() {
       iconColor: "bg-makr-blue",
     },
     {
+      name: "MakrX.events",
+      description: "Event Management",
+      url: "https://events.makrx.org",
+      bgColor: "bg-orange-500/10 dark:bg-orange-500/20",
+      iconColor: "bg-orange-500",
+    },
+    {
       name: "MakrX.Store",
       description: "Tools & Components",
       url: "https://makrx.store",
