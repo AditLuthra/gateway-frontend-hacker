@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet-async";
 import { 
   HelpCircle, Search, MessageCircle, Mail, Phone,
   ChevronDown, ChevronRight, ExternalLink, Send,
   FileText, Video, Users, Zap, Clock, CheckCircle
 } from 'lucide-react';
-import { Navigation } from '@/components/Navigation';
+import { EnhancedNavigation } from "@/components/EnhancedNavigation";
+import { EnhancedFooter } from "@/components/EnhancedFooter";
+import { SEOStructuredData } from "@/components/SEOStructuredData";
+import { ThreeBackground } from "@/components/ThreeBackground";
 
 interface FAQ {
   question: string;
@@ -141,66 +145,85 @@ export default function Support() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-mono">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Support Center - Get Help & Documentation | MakrX.org</title>
+        <meta 
+          name="description" 
+          content="Get help with MakrX platform. Find FAQs, documentation, guides, and contact our support team. Quick response times for technical issues and billing questions."
+        />
+      </Helmet>
       
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-makr-blue/20 to-makr-yellow/20"></div>
-      </div>
-
-      <div className="relative pt-24 pb-16">
+      <SEOStructuredData type="organization" />
+      
+      <ThreeBackground />
+      <EnhancedNavigation />
+      
+      <main className="min-h-screen relative z-10">
         {/* Hero Section */}
-        <section className="py-16 border-b border-makr-blue/30">
+        <section className="bg-gradient-to-br from-terminal-green/20 to-makr-blue/20 py-20 border-b border-makr-blue/30">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <HelpCircle className="w-16 h-16 text-makr-yellow mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-bold text-makr-yellow mb-6 tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-makr-yellow/10 backdrop-blur-sm border border-makr-yellow/30 rounded-full px-6 py-2 mb-6">
+              <HelpCircle className="h-5 w-5 text-makr-yellow animate-pulse" />
+              <span className="text-makr-yellow font-mono font-semibold tracking-wider">
+                SUPPORT CENTER
+              </span>
+            </div>
+            
+            <HelpCircle className="w-16 h-16 text-makr-yellow mx-auto mb-6 animate-bounce" />
+            <h1 className="text-4xl md:text-6xl font-bold text-gradient-cyberpunk mb-6 font-mono">
               SUPPORT_CENTER.help()
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-dark-text-secondary mb-8 font-mono">
               Get help, find answers, and connect with our community
             </p>
             
             {/* Search Bar */}
             <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-dark-text-muted" />
               <input
                 type="text"
                 placeholder="Search for help articles, FAQs, or guides..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-gray-900 border border-makr-blue/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-makr-yellow/50 transition-colors"
+                className="w-full pl-12 pr-4 py-4 bg-dark-bg-secondary border border-makr-blue/30 rounded-xl text-dark-text-primary placeholder-dark-text-muted focus:outline-none focus:border-makr-yellow/50 transition-colors font-mono"
               />
             </div>
           </div>
         </section>
 
         {/* Quick Actions */}
-        <section className="py-12">
+        <section className="py-20 bg-dark-bg-secondary">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               <Link
                 to="/docs"
-                className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6 hover:border-makr-yellow/50 transition-colors group"
+                className="card-cyberpunk p-8 group hover:shadow-neon transition-all"
               >
-                <FileText className="w-8 h-8 text-makr-blue mb-4 group-hover:text-makr-yellow transition-colors" />
-                <h3 className="text-lg font-semibold text-makr-yellow mb-2">Documentation</h3>
-                <p className="text-gray-400 text-sm">Complete guides and API reference</p>
+                <div className="w-16 h-16 bg-makr-blue/10 border border-makr-blue/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-makr-blue/20 group-hover:shadow-neon transition-all">
+                  <FileText className="w-8 h-8 text-makr-blue group-hover:text-makr-yellow transition-colors" />
+                </div>
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-3 font-mono">Documentation</h3>
+                <p className="text-dark-text-secondary text-sm font-mono">Complete guides and API reference</p>
               </Link>
               
               <a
                 href="mailto:support@makrx.org"
-                className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6 hover:border-makr-yellow/50 transition-colors group"
+                className="card-cyberpunk p-8 group hover:shadow-neon transition-all"
               >
-                <Mail className="w-8 h-8 text-makr-blue mb-4 group-hover:text-makr-yellow transition-colors" />
-                <h3 className="text-lg font-semibold text-makr-yellow mb-2">Email Support</h3>
-                <p className="text-gray-400 text-sm">Get personalized help from our team</p>
+                <div className="w-16 h-16 bg-terminal-green/10 border border-terminal-green/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-terminal-green/20 group-hover:shadow-neon-green transition-all">
+                  <Mail className="w-8 h-8 text-terminal-green group-hover:text-makr-yellow transition-colors" />
+                </div>
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-3 font-mono">Email Support</h3>
+                <p className="text-dark-text-secondary text-sm font-mono">Get personalized help from our team</p>
               </a>
               
-              <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6">
-                <Users className="w-8 h-8 text-makr-blue mb-4" />
-                <h3 className="text-lg font-semibold text-makr-yellow mb-2">Community</h3>
-                <p className="text-gray-400 text-sm">Connect with other makers and experts</p>
+              <div className="card-cyberpunk p-8 group">
+                <div className="w-16 h-16 bg-makr-yellow/10 border border-makr-yellow/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-makr-yellow/20 group-hover:shadow-neon transition-all">
+                  <Users className="w-8 h-8 text-makr-yellow" />
+                </div>
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-3 font-mono">Community</h3>
+                <p className="text-dark-text-secondary text-sm font-mono">Connect with other makers and experts</p>
               </div>
             </div>
           </div>
@@ -208,38 +231,38 @@ export default function Support() {
 
         {/* FAQs */}
         {filteredFAQs.length > 0 && (
-          <section className="py-20">
+          <section className="py-20 bg-dark-bg-primary">
             <div className="max-w-4xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12 text-makr-yellow">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
                 FREQUENTLY_ASKED.getAnswers()
               </h2>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {filteredFAQs.map((faq, index) => (
-                  <div key={index} className="bg-gray-900 border border-makr-blue/30 rounded-xl overflow-hidden">
+                  <div key={index} className="card-cyberpunk border border-makr-blue/30 overflow-hidden hover:shadow-neon transition-all">
                     <button
                       onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-800 transition-colors"
+                      className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-dark-bg-secondary transition-colors"
                     >
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                          <span className="text-xs px-2 py-1 bg-makr-blue/20 border border-makr-blue/50 text-makr-blue rounded">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-xs px-3 py-1 bg-makr-blue/20 border border-makr-blue/50 text-makr-blue rounded-full font-mono">
                             {faq.category}
                           </span>
                         </div>
-                        <h3 className="font-semibold text-makr-yellow">{faq.question}</h3>
+                        <h3 className="font-semibold text-gradient-cyberpunk font-mono">{faq.question}</h3>
                       </div>
                       {expandedFAQ === index ? (
-                        <ChevronDown className="w-5 h-5 text-makr-blue" />
+                        <ChevronDown className="w-6 h-6 text-makr-blue" />
                       ) : (
-                        <ChevronRight className="w-5 h-5 text-makr-blue" />
+                        <ChevronRight className="w-6 h-6 text-makr-blue" />
                       )}
                     </button>
                     
                     {expandedFAQ === index && (
-                      <div className="px-6 pb-6">
-                        <div className="pt-4 border-t border-gray-700">
-                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                      <div className="px-8 pb-8">
+                        <div className="pt-6 border-t border-makr-blue/30">
+                          <p className="text-dark-text-secondary leading-relaxed font-mono">{faq.answer}</p>
                         </div>
                       </div>
                     )}
@@ -252,33 +275,33 @@ export default function Support() {
 
         {/* Help Articles */}
         {filteredArticles.length > 0 && (
-          <section className="py-20 bg-gray-900/50">
+          <section className="py-20 bg-dark-bg-secondary">
             <div className="max-w-6xl mx-auto px-6">
-              <h2 className="text-3xl font-bold text-center mb-12 text-makr-yellow">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
                 HELP_ARTICLES.browse()
               </h2>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((article, index) => (
                   <Link
                     key={index}
                     to={article.href}
-                    className="bg-black border border-makr-blue/30 rounded-xl p-6 hover:border-makr-yellow/50 transition-colors group"
+                    className="card-cyberpunk p-6 border border-makr-blue/30 hover:border-makr-yellow/50 hover:shadow-neon transition-all group"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-xs px-2 py-1 bg-makr-blue/20 border border-makr-blue/50 text-makr-blue rounded">
+                      <span className="text-xs px-3 py-1 bg-makr-blue/20 border border-makr-blue/50 text-makr-blue rounded-full font-mono">
                         {article.category}
                       </span>
-                      <div className="flex items-center gap-1">
-                        {article.type === 'video' && <Video className="w-4 h-4 text-makr-yellow" />}
-                        {article.type === 'guide' && <FileText className="w-4 h-4 text-makr-blue" />}
-                        {article.type === 'article' && <FileText className="w-4 h-4 text-gray-400" />}
+                      <div className="flex items-center gap-2">
+                        {article.type === 'video' && <Video className="w-5 h-5 text-makr-yellow" />}
+                        {article.type === 'guide' && <FileText className="w-5 h-5 text-makr-blue" />}
+                        {article.type === 'article' && <FileText className="w-5 h-5 text-terminal-green" />}
                       </div>
                     </div>
-                    <h3 className="font-semibold text-makr-yellow mb-2 group-hover:text-white transition-colors">
+                    <h3 className="font-semibold text-gradient-cyberpunk mb-3 group-hover:text-makr-yellow transition-colors font-mono">
                       {article.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">{article.description}</p>
+                    <p className="text-dark-text-secondary text-sm font-mono">{article.description}</p>
                   </Link>
                 ))}
               </div>
@@ -287,46 +310,46 @@ export default function Support() {
         )}
 
         {/* Contact Form */}
-        <section className="py-20">
+        <section className="py-20 bg-dark-bg-primary">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12 text-makr-yellow">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient-cyberpunk font-mono">
               CONTACT_SUPPORT.send()
             </h2>
             
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-8">
-                <h3 className="text-xl font-semibold text-makr-blue mb-6">Send us a message</h3>
+              <div className="card-cyberpunk p-8 border border-makr-blue/30">
+                <h3 className="text-xl font-semibold text-gradient-cyberpunk mb-6 font-mono">Send us a message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                    <label className="block text-sm font-medium text-dark-text-secondary mb-2 font-mono">Name</label>
                     <input
                       type="text"
                       required
                       value={contactForm.name}
                       onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-black border border-makr-blue/30 rounded-lg text-white focus:outline-none focus:border-makr-yellow/50 transition-colors"
+                      className="w-full px-4 py-3 bg-dark-bg-secondary border border-makr-blue/30 rounded-lg text-dark-text-primary focus:outline-none focus:border-makr-yellow/50 transition-colors font-mono"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-dark-text-secondary mb-2 font-mono">Email</label>
                     <input
                       type="email"
                       required
                       value={contactForm.email}
                       onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-black border border-makr-blue/30 rounded-lg text-white focus:outline-none focus:border-makr-yellow/50 transition-colors"
+                      className="w-full px-4 py-3 bg-dark-bg-secondary border border-makr-blue/30 rounded-lg text-dark-text-primary focus:outline-none focus:border-makr-yellow/50 transition-colors font-mono"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
+                    <label className="block text-sm font-medium text-dark-text-secondary mb-2 font-mono">Category</label>
                     <select
                       value={contactForm.category}
                       onChange={(e) => setContactForm({ ...contactForm, category: e.target.value })}
-                      className="w-full px-4 py-3 bg-black border border-makr-blue/30 rounded-lg text-white focus:outline-none focus:border-makr-yellow/50 transition-colors"
+                      className="w-full px-4 py-3 bg-dark-bg-secondary border border-makr-blue/30 rounded-lg text-dark-text-primary focus:outline-none focus:border-makr-yellow/50 transition-colors font-mono"
                     >
                       <option value="general">General Support</option>
                       <option value="technical">Technical Issue</option>
@@ -337,30 +360,30 @@ export default function Support() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                    <label className="block text-sm font-medium text-dark-text-secondary mb-2 font-mono">Subject</label>
                     <input
                       type="text"
                       required
                       value={contactForm.subject}
                       onChange={(e) => setContactForm({ ...contactForm, subject: e.target.value })}
-                      className="w-full px-4 py-3 bg-black border border-makr-blue/30 rounded-lg text-white focus:outline-none focus:border-makr-yellow/50 transition-colors"
+                      className="w-full px-4 py-3 bg-dark-bg-secondary border border-makr-blue/30 rounded-lg text-dark-text-primary focus:outline-none focus:border-makr-yellow/50 transition-colors font-mono"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <label className="block text-sm font-medium text-dark-text-secondary mb-2 font-mono">Message</label>
                     <textarea
                       rows={6}
                       required
                       value={contactForm.message}
                       onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-black border border-makr-blue/30 rounded-lg text-white focus:outline-none focus:border-makr-yellow/50 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-dark-bg-secondary border border-makr-blue/30 rounded-lg text-dark-text-primary focus:outline-none focus:border-makr-yellow/50 transition-colors resize-none font-mono"
                     />
                   </div>
                   
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-makr-yellow/20 border border-makr-yellow/50 text-makr-yellow font-semibold rounded-lg hover:bg-makr-yellow/30 transition-colors"
+                    className="btn-cyberpunk w-full flex items-center justify-center gap-3 px-6 py-3 font-semibold rounded-lg transition-all duration-300 hover:scale-105 font-mono"
                   >
                     Send Message
                     <Send className="w-4 h-4" />
@@ -370,62 +393,62 @@ export default function Support() {
               
               {/* Contact Info */}
               <div className="space-y-8">
-                <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-makr-blue mb-4">Support Hours</h3>
-                  <div className="space-y-2 text-gray-300">
+                <div className="card-cyberpunk p-6 border border-makr-blue/30">
+                  <h3 className="text-lg font-semibold text-gradient-cyberpunk mb-4 font-mono">Support Hours</h3>
+                  <div className="space-y-3 text-dark-text-secondary">
                     <div className="flex items-center gap-3">
                       <Clock className="w-4 h-4 text-makr-yellow" />
-                      <span>Monday - Friday: 9:00 AM - 6:00 PM IST</span>
+                      <span className="font-mono">Monday - Friday: 9:00 AM - 6:00 PM IST</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-4 h-4 text-makr-yellow" />
-                      <span>Saturday: 10:00 AM - 4:00 PM IST</span>
+                      <span className="font-mono">Saturday: 10:00 AM - 4:00 PM IST</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Clock className="w-4 h-4 text-gray-500" />
-                      <span>Sunday: Closed</span>
+                      <Clock className="w-4 h-4 text-dark-text-muted" />
+                      <span className="font-mono">Sunday: Closed</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-makr-blue mb-4">Direct Contact</h3>
-                  <div className="space-y-3">
+                <div className="card-cyberpunk p-6 border border-makr-blue/30">
+                  <h3 className="text-lg font-semibold text-gradient-cyberpunk mb-4 font-mono">Direct Contact</h3>
+                  <div className="space-y-4">
                     <a
                       href="mailto:support@makrx.org"
-                      className="flex items-center gap-3 text-gray-300 hover:text-makr-yellow transition-colors"
+                      className="flex items-center gap-3 text-dark-text-secondary hover:text-makr-yellow transition-colors font-mono"
                     >
-                      <Mail className="w-4 h-4" />
+                      <Mail className="w-5 h-5" />
                       <span>support@makrx.org</span>
                     </a>
                     <a
                       href="tel:+918047258000"
-                      className="flex items-center gap-3 text-gray-300 hover:text-makr-yellow transition-colors"
+                      className="flex items-center gap-3 text-dark-text-secondary hover:text-makr-yellow transition-colors font-mono"
                     >
-                      <Phone className="w-4 h-4" />
+                      <Phone className="w-5 h-5" />
                       <span>+91 80472 58000</span>
                     </a>
                   </div>
                 </div>
                 
-                <div className="bg-gray-900 border border-makr-blue/30 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-makr-blue mb-4">Response Times</h3>
+                <div className="card-cyberpunk p-6 border border-makr-blue/30">
+                  <h3 className="text-lg font-semibold text-gradient-cyberpunk mb-4 font-mono">Response Times</h3>
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-400">General Inquiries:</span>
-                      <span className="text-makr-yellow">24 hours</span>
+                      <span className="text-dark-text-secondary font-mono">General Inquiries:</span>
+                      <span className="text-makr-yellow font-mono">24 hours</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-400">Technical Issues:</span>
-                      <span className="text-makr-yellow">4-8 hours</span>
+                      <span className="text-dark-text-secondary font-mono">Technical Issues:</span>
+                      <span className="text-makr-yellow font-mono">4-8 hours</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-400">Critical Bugs:</span>
-                      <span className="text-green-400">2 hours</span>
+                      <span className="text-dark-text-secondary font-mono">Critical Bugs:</span>
+                      <span className="text-terminal-green font-mono">2 hours</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-400">Enterprise:</span>
-                      <span className="text-green-400">1 hour</span>
+                      <span className="text-dark-text-secondary font-mono">Enterprise:</span>
+                      <span className="text-terminal-green font-mono">1 hour</span>
                     </div>
                   </div>
                 </div>
@@ -433,7 +456,9 @@ export default function Support() {
             </div>
           </div>
         </section>
-      </div>
-    </div>
+      </main>
+      
+      <EnhancedFooter />
+    </>
   );
 }
